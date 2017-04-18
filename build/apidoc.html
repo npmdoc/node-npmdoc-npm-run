@@ -63,6 +63,15 @@
 
         <li>
 
+            <a class="apidocElementLiA" href="#apidoc.element.npm-run.npm-run">
+            function <span class="apidocSignatureSpan"></span>npm-run
+            <span class="apidocSignatureSpan">(command, options, fn)</span>
+            </a>
+
+        </li>
+
+        <li>
+
             <a class="apidocElementLiA" href="#apidoc.element.npm-run.exec">
             function <span class="apidocSignatureSpan">npm-run.</span>exec
             <span class="apidocSignatureSpan">(command, options, fn)</span>
@@ -106,12 +115,92 @@
 
         </li>
 
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.npm-run.toString">
+            function <span class="apidocSignatureSpan">npm-run.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.npm-run.spawn">module npm-run.spawn</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.npm-run.spawn.spawn">
+            function <span class="apidocSignatureSpan">npm-run.</span>spawn
+            <span class="apidocSignatureSpan">(command, args, options, fn)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.npm-run.spawnSync">module npm-run.spawnSync</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.npm-run.spawnSync.spawnSync">
+            function <span class="apidocSignatureSpan">npm-run.</span>spawnSync
+            <span class="apidocSignatureSpan">(command, args, options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.npm-run.sync">module npm-run.sync</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.npm-run.sync.sync">
+            function <span class="apidocSignatureSpan">npm-run.</span>sync
+            <span class="apidocSignatureSpan">(command, options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.npm-run.toString">module npm-run.toString</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.npm-run.toString.toString">
+            function <span class="apidocSignatureSpan">npm-run.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
     </ol></li>
 
 </ol></div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.npm-run" id="apidoc.module.npm-run">module npm-run</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.npm-run.npm-run" id="apidoc.element.npm-run.npm-run">
+        function <span class="apidocSignatureSpan"></span>npm-run
+        <span class="apidocSignatureSpan">(command, options, fn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function npmExec(command, options, fn) {
+  var a = normalizeExecArgs(command, options, fn)
+  command = a[0]
+  options = a[1]
+  fn = a[2]
+  return exec(command, augmentOptionsSync(options), fn)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
 
 
     <h2>
@@ -289,6 +378,161 @@ Alias of npmRun.execSync
 Takes same arguments as node&#x27;s [execSync](https://nodejs.org/api/child_process.html#child_process_child_process_execsync_command_options
 ).
 ...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.npm-run.toString" id="apidoc.element.npm-run.toString">
+        function <span class="apidocSignatureSpan">npm-run.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function () {
+    return text;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.npm-run.spawn" id="apidoc.module.npm-run.spawn">module npm-run.spawn</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.npm-run.spawn.spawn" id="apidoc.element.npm-run.spawn.spawn">
+        function <span class="apidocSignatureSpan">npm-run.</span>spawn
+        <span class="apidocSignatureSpan">(command, args, options, fn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function npmSpawn(command, args, options, fn) {
+  var a = normalizeSpawnArgs(command, args, options, fn)
+  command = a[0]
+  args = a[1]
+  options = a[2]
+  fn = a[3]
+  return spawn(command, args, augmentOptionsSync(options), fn)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+{cwd: __dirname + &#x27;/tests&#x27;}
+)
+child.stdout // stdout Buffer|String
+child.stderr // stderr Buffer|String
+child.status // exit code
+```
+
+## npmRun.<span class="apidocCodeKeywordSpan">spawn</span>(command[, args][, options])
+
+Takes same arguments as node&#x27;s [spawn](https://nodejs.org/api/child_process.html#child_process_child_process_spawn_command_args_options
+).
+
+```js
+var child = npmRun.spawn(
+&#x27;mocha&#x27;,
+&#x27;--debug-brk --sort&#x27;.split(&#x27; &#x27;),
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.npm-run.spawnSync" id="apidoc.module.npm-run.spawnSync">module npm-run.spawnSync</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.npm-run.spawnSync.spawnSync" id="apidoc.element.npm-run.spawnSync.spawnSync">
+        function <span class="apidocSignatureSpan">npm-run.</span>spawnSync
+        <span class="apidocSignatureSpan">(command, args, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function npmSpawnSync(command, args, options) {
+  var a = normalizeSpawnArgs(command, args, options)
+  command = a[0]
+  args = a[1]
+  options = a[2]
+  return spawn.sync(command, args, augmentOptionsSync(options))
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var stdout = npmRun.execSync(
+&#x27;mocha --debug-brk --sort&#x27;,
+{cwd: __dirname + &#x27;/tests&#x27;}
+)
+stdout // command output as Buffer|String
+```
+
+## npmRun.<span class="apidocCodeKeywordSpan">spawnSync</span>(command[, args][, options])
+
+Takes same arguments as node&#x27;s [spawnSync](https://nodejs.org/api/child_process.html#child_process_child_process_spawnsync_command_args_options
+).
+
+```js
+var child = npmRun.spawnSync(
+&#x27;mocha&#x27;,
+&#x27;--debug-brk --sort&#x27;.split(&#x27; &#x27;),
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.npm-run.sync" id="apidoc.module.npm-run.sync">module npm-run.sync</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.npm-run.sync.sync" id="apidoc.element.npm-run.sync.sync">
+        function <span class="apidocSignatureSpan">npm-run.</span>sync
+        <span class="apidocSignatureSpan">(command, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function npmExecSync(command, options) {
+  var a = normalizeExecArgs(command, options)
+  command = a[0]
+  options = a[1]
+  return execSync(command, augmentOptionsSync(options))
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+npmRun.exec(&#x27;mocha --debug-brk --sort&#x27;, {cwd: __dirname + &#x27;/tests&#x27;}, function (err, stdout, stderr) {
+  // err Error or null if there was no error
+  // stdout Buffer|String
+  // stderr Buffer|String
+})
+```
+
+## npmRun.<span class="apidocCodeKeywordSpan">sync</span>(command[, options])
+
+Alias of npmRun.execSync
+
+## npmRun.execSync(command[, options])
+
+Takes same arguments as node&#x27;s [execSync](https://nodejs.org/api/child_process.html#child_process_child_process_execsync_command_options
+).
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.npm-run.toString" id="apidoc.module.npm-run.toString">module npm-run.toString</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.npm-run.toString.toString" id="apidoc.element.npm-run.toString.toString">
+        function <span class="apidocSignatureSpan">npm-run.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function toString() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
 
