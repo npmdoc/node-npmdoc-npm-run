@@ -1,6 +1,6 @@
 # npmdoc-npm-run
 
-#### api documentation for  [npm-run (v4.1.2)](https://github.com/timoxley/npm-run)  [![npm package](https://img.shields.io/npm/v/npmdoc-npm-run.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-npm-run) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-npm-run.svg)](https://travis-ci.org/npmdoc/node-npmdoc-npm-run)
+#### basic api documentation for  [npm-run (v4.1.2)](https://github.com/timoxley/npm-run)  [![npm package](https://img.shields.io/npm/v/npmdoc-npm-run.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-npm-run) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-npm-run.svg)](https://travis-ci.org/npmdoc/node-npmdoc-npm-run)
 
 #### Run executables for locally-installed packages without using ./node_modules/.bin
 
